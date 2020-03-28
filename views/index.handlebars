@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1> Eat The Burger!</h1>
+
+       <form class="create-form">
+            <input type="text">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+     <div class="row">
+         <div class="colsm-6">
+             <div class="panel panel-default">
+              <div class="panel-heading" id="lefthead"><strong>Burgers</strong></div>               
+                 <div class="panel-body">                    
+                     <ul>
+                         {{#each burger}}
+                          {{#unless devoured}}
+                           <span>{{this.id}}- {{this.name}}</span>
+                           <button type="button" data-id="{{this.id}}">devaure!</button>
+                          {{/unless}}
+                         {{/each}}
+                     </ul>
+                 </div>
+             </div>
+         </div>
+      </div>
+
+     </div>
+</div>
