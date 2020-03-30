@@ -1,3 +1,3 @@
-INSERT INTO burgers (name,devoured) VALUES ('cheeseburger',false);
-INSERT INTO burgers (name, devoured) VALUES ('vegieburger',false);
-INSERT INTO burgers (name, devoured) VALUES ('chickenburger',false);
+INSERT INTO burgers (name) VALUES ('cheeseburger');
+INSERT INTO burgers (name) VALUES ('vegieburger');
+INSERT INTO burgers (name) VALUES ('chickenburger');

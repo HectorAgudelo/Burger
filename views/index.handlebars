@@ -1,29 +1,56 @@
-<div class="container">
-    <div class="jumbotron">
-        <h1> Eat The Burger!</h1>
+<div class="img relative"><img src="/image/burger.png" alt="burger" class="center" /></div>
 
-       <form class="create-form">
-            <input type="text">
-            <button type="submit">Submit</button>
-        </form>
+
+<h1 class="title relative">EAT THE BURGER!</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <div class="todevour">
+                <ul style="list-style-type:none">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+
+                    <li class="devourchoice text-center">
+                        Order #{{id}}: {{name}}
+
+                        <button class="change-devoured btn btn-danger" data-id="{{id}}" data-newdevoured="{{devoured}}">
+                            {{#unless devoured}}Devour it!{{/unless}}
+                        </button>
+                    </li>
+
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="devoured text-secondary">
+                <ul style="list-style-type:none">
+                    {{#each burgers}}
+                    {{#if devoured}}
+
+                    <li class="yum text-center">
+                        Order #{{id}}: {{name}}
+                        <button class="delete-burger btn btn-danger" data-id="{{this.id}}">Delete it!</button>
+                    </li>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
     </div>
-     <div class="row">
-         <div class="colsm-6">
-             <div class="panel panel-default">
-              <div class="panel-heading" id="lefthead"><strong>Burgers</strong></div>               
-                 <div class="panel-body">                    
-                     <ul>
-                         {{#each burger}}
-                          {{#unless devoured}}
-                           <span>{{this.id}}- {{this.name}}</span>
-                           <button type="button" data-id="{{this.id}}">devaure!</button>
-                          {{/unless}}
-                         {{/each}}
-                     </ul>
-                 </div>
-             </div>
-         </div>
-      </div>
+</div>
 
-     </div>
+<div class="container-fluid">
+    <form class="create-form">
+
+        <div class="form-group mx-auto">
+            <input type="text" class="form-control form-control-l" id="bg" name="burger_name"
+                placeholder="Enter a burger!">
+        </div>
+        <button type="submit" class="submit btn btn-danger">Add Burger</button>
+    </form>
 </div>
