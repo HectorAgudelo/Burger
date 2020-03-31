@@ -51,7 +51,7 @@ var orm = {
     queryString += ") ";
 // insert into tabla(burgers) ((col.tostring()) name, devour);
 //values (name, devour);
-    console.log(queryString);
+    
 
     connection.query(queryString, vals, function(err, result) {
       if (err) {
